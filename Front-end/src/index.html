@@ -12,27 +12,32 @@
 
 <body>
 	<header class="fixed-top">
-		<nav class="navbar navbar-expand-lg shadow-sm bg-primary-subtle p-4 lead">
+		<nav class="navbar navbar-expand-lg shadow-sm bg-dark text-light p-4 lead">
 			<div class="container-fluid">
-				<h1 class="display-6" href="#">Navbar</h1>
+				<h1 class="display-6 font-monospace" href="#">
+					LEGEND</h1>
 
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
 					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon bg-secondary-bg-secondary"></span>
 				</button>
 
-				<div class="collapse navbar-collapse position-relative" id="navbarNav">
+				<div class="collapse navbar-collapse position-relative m-auto" id="navbarNav">
 
-					<ul class="navbar-nav ms-5">
+					<ul class="navbar-nav me-5" style="display: flex;width: 100%; justify-content: end;gap: 2rem;">
 
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="./index.html" href="#">Legend</a>
+							<a class="nav-link  text-light active" aria-current="./index.html"
+								href="./index.html">Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="./about.html">About</a>
+							<a class="nav-link  text-light" href="./about.html">About</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="./admin-login.html">Admin Login</a>
+							<a class="nav-link  text-light" href="./contact.html">Contact</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link  text-light" href="./admin-login.html">Admin Login</a>
 						</li>
 
 					</ul>
@@ -57,10 +62,15 @@
 
 			</div>
 
-			<form class="form-inline d-flex justify-content-center" action="./search.html" method="POST">
-				<label for="search-box"></label>
-				<input type="text" class="form-control ms-2 me-3 w-25" placeholder="Search" id="search-box">
-				<button type="submit" name="submit" class="btn btn-dark">Search</button>
+
+			<form class="row form needs-validation" action="./search.html" method="POST" novalidate>
+
+				<div class="col-md-4 m-auto d-flex gap-2 w-25">
+					<label for="search-box"></label>
+					<input type="text" class="form-control" placeholder="Search" id="search-box" required>
+					<button type="submit" name="submit" class="btn btn-dark">Search</button>
+				</div>
+
 			</form>
 
 		</section>
@@ -92,16 +102,16 @@
 	</main>
 
 
-	<footer class="bg-light py-3 shadow-lg bg-primary-subtle p-5">
+	<footer class="bg-light py-3 shadow-lg bg-dark text-light p-5">
 
 		<div class="container">
 			<div class="row">
-				<h1>Logo</h1>
+				<h2>LEGEND</h2>
 			</div>
 
 			<div class="row">
 				<div class="col m-auto">
-					<h5>Contact Information</h5>
+					<h2>Contact Information</h2>
 					<ul class="list-unstyled">
 						<li>Bisrate Gabriel / Nfas Silk Lafto Subcity</li>
 						<li>4 Kilo / Arada Subcity</li>
@@ -110,13 +120,13 @@
 				</div>
 
 				<div class="col m-auto">
-					<h5>Follow Us</h5>
+					<h2>Follow Us</h2>
 
 					<ul class="list-unstyled">
-						<li><a href="#" class="text-decoration-none">Facebook</a></li>
-						<li><a href="#" class="text-decoration-none">LinkedIn</a></li>
-						<li><a href="#" class="text-decoration-none">Instagram</a></li>
-						<li><a href="#" class="text-decoration-none">Twitter</a></li>
+						<li><a href="#" class="text-light">Facebook</a></li>
+						<li><a href="#" class="text-light">LinkedIn</a></li>
+						<li><a href="#" class="text-light">Instagram</a></li>
+						<li><a href="#" class="text-light">Twitter</a></li>
 					</ul>
 
 				</div>
@@ -133,6 +143,30 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
 		crossorigin="anonymous"></script>
+
+
+	<script>
+		// Example starter JavaScript for disabling form submissions if there are invalid fields
+		(function () {
+			'use strict'
+
+			// Fetch all the forms we want to apply custom Bootstrap validation styles to
+			var forms = document.querySelectorAll('.needs-validation')
+
+			// Loop over them and prevent submission
+			Array.prototype.slice.call(forms)
+				.forEach(function (form) {
+					form.addEventListener('submit', function (event) {
+						if (!form.checkValidity()) {
+							event.preventDefault()
+							event.stopPropagation()
+						}
+
+						form.classList.add('was-validated')
+					}, false)
+				})
+		})()
+	</script>
 </body>
 
 </html>
